@@ -1,0 +1,27 @@
+$primary-color: #FF1053;
+$secondary-color: #6C6EA0;
+$details-color: #66C7F4;
+$background-color: #FFFF;
+
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $secondary-color;
+}
+
+
+
+
+

@@ -1,0 +1,161 @@
+$primary-color: #FF1053;
+$secondary-color: #6C6EA0;
+$details-color: #66C7F4;
+$background-color: #FFFF;
+
+@mixin button-style {
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: background-color 0.2s linear;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+@mixin score-style {
+  padding: 25px 6px;
+  height: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 12px
+}
+
+
+h1 {
+  font-size: 40px;
+  color: lighten($primary-color, 10%);
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: $details-color;
+  border-radius: 15px;
+
+  .quiz-app {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 15px;
+    height: 400px;
+    width: 300px;
+
+    .quiz-app__question {
+      font-size: 18px;
+    }
+
+    .quiz-app__option {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      gap: 10px;
+
+      .button-option {
+        @include button-style;
+        color: white;
+        background-color: $primary-color;
+
+        &:hover,
+        &:active {
+          color: $primary-color;
+          background-color: white;
+          border: solid 2px #FF1053;
+          cursor: pointer;
+        }
+      }
+
+      .button-option--green {
+        @include button-style;
+        color: black;
+        background-color: #5ee857;
+      }
+
+      .button-option--red {
+        @include button-style;
+        color: white;
+        background-color: #ee3131;
+      }
+    }
+
+    .quiz-app__next {
+      @include button-style;
+      padding: 10px;
+      color: white;
+      background-color: $secondary-color;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+      }
+    }
+
+    .quiz-app__error {
+      font-weight: bold;
+      margin-top: 15px;
+      color: $primary-color;
+      border-bottom: solid 1px $primary-color;
+      align-self: center;
+
+    }
+  }
+  .score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 300px;
+  }
+
+  .less {
+    @include score-style;
+    color: white;
+    background-color: #f85959;
+  }
+
+  .medium {
+    @include score-style;
+    color: white;
+    background-color: #f6cf4b;
+  }
+
+  .good {
+    @include score-style;
+    color: white;
+    background-color: #6dfa73;
+  }
+
+  .score-span {
+    font-weight: bold;
+  }
+
+  .score-reset {
+    @include button-style;
+    transition: transform 0.2s ease-in-out;
+
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      transform: scale(1.02);  /* Scala il pulsante del 10% quando il puntatore è sopra di esso */
+
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
